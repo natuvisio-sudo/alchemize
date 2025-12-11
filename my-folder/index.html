@@ -17,13 +17,10 @@
             --text-main: #E0E0E0;
             --text-muted: #888888;
             --success: #28a745;
+            --error: #dc3545;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--bg-color);
@@ -37,17 +34,9 @@
         }
 
         /* TYPOGRAPHY */
-        h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--accent-gold);
-            letter-spacing: 2px;
-        }
+        h1, h2, h3 { font-family: 'Cinzel', serif; color: var(--accent-gold); letter-spacing: 2px; }
 
-        .brand-header {
-            margin-top: 20px;
-            text-align: center;
-            animation: fadeIn 2s ease;
-        }
+        .brand-header { margin-top: 20px; text-align: center; animation: fadeIn 2s ease; }
 
         /* NAVIGATION TABS */
         .nav-dock {
@@ -79,17 +68,15 @@
 
         /* CONTAINER VIEWS */
         .view-container {
-            display: none; /* Hidden by default */
+            display: none;
             width: 90%;
             max-width: 500px;
             animation: slideUp 0.5s ease;
         }
         
-        .view-container.active {
-            display: block;
-        }
+        .view-container.active { display: block; }
 
-        /* --- VIEW 1: IGNITION (The Ritual) --- */
+        /* --- VIEW 1: IGNITION --- */
         .ritual-card {
             background: var(--card-bg);
             border: 1px solid #222;
@@ -102,8 +89,7 @@
 
         .inventory-badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 15px; right: 15px;
             font-size: 12px;
             color: var(--text-muted);
             border: 1px solid #333;
@@ -111,97 +97,60 @@
             border-radius: 10px;
         }
 
-        .slider-group {
-            margin: 25px 0;
-            text-align: left;
-        }
+        .slider-group { margin: 25px 0; text-align: left; }
 
         .slider-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            margin-bottom: 8px;
-            color: var(--text-muted);
+            display: flex; justify-content: space-between;
+            font-size: 14px; margin-bottom: 8px; color: var(--text-muted);
         }
 
         input[type=range] {
-            width: 100%;
-            height: 4px;
-            background: #333;
-            border-radius: 2px;
-            -webkit-appearance: none;
+            width: 100%; height: 4px; background: #333;
+            border-radius: 2px; -webkit-appearance: none;
         }
         input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 16px;
-            height: 16px;
-            background: var(--accent-gold);
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 0 10px var(--accent-glow);
+            -webkit-appearance: none; width: 16px; height: 16px;
+            background: var(--accent-gold); border-radius: 50%;
+            cursor: pointer; box-shadow: 0 0 10px var(--accent-glow);
         }
 
         .intention-input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid #444;
-            color: white;
-            font-size: 16px;
-            padding: 10px;
-            margin-bottom: 30px;
-            text-align: center;
-            font-style: italic;
+            width: 100%; background: transparent; border: none;
+            border-bottom: 1px solid #444; color: white;
+            font-size: 16px; padding: 10px; margin-bottom: 30px;
+            text-align: center; font-style: italic;
         }
-        .intention-input:focus {
-            outline: none;
-            border-bottom: 1px solid var(--accent-gold);
-        }
+        .intention-input:focus { outline: none; border-bottom: 1px solid var(--accent-gold); }
 
         .ignite-btn {
-            width: 100%;
-            padding: 18px;
+            width: 100%; padding: 18px;
             background: linear-gradient(135deg, #b8860b, #daa520);
-            border: none;
-            border-radius: 12px;
-            color: black;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            font-size: 18px;
-            cursor: pointer;
+            border: none; border-radius: 12px;
+            color: black; font-family: 'Cinzel', serif;
+            font-weight: 700; font-size: 18px; cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
+        .ignite-btn:active { transform: scale(0.98); }
 
-        .ignite-btn:active {
-            transform: scale(0.98);
-        }
-
-        /* --- VIEW 2: MIRROR (Manifestation) --- */
+        /* --- VIEW 2: MIRROR --- */
         .quote-box {
             border-left: 4px solid var(--accent-gold);
             padding: 20px;
             background: linear-gradient(90deg, #1a1a1a, transparent);
-            margin-top: 20px;
-            font-style: italic;
-            font-size: 18px;
-            line-height: 1.6;
+            margin-top: 20px; font-style: italic; font-size: 18px; line-height: 1.6;
         }
 
-        /* --- VIEW 3: TRUTH (Data) --- */
+        /* --- VIEW 3: TRUTH --- */
         .chart-container {
             background: var(--card-bg);
-            padding: 20px;
-            border-radius: 20px;
-            margin-top: 20px;
-            border: 1px solid #222;
+            padding: 20px; border-radius: 20px;
+            margin-top: 20px; border: 1px solid #222;
         }
 
         /* ANIMATIONS */
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        
         .pulse { animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
 
@@ -223,7 +172,7 @@
 
     <div id="view-ignition" class="view-container active">
         <div class="ritual-card">
-            <div class="inventory-badge">Current Stock: <span id="stock-count">28</span> Pills</div>
+            <div class="inventory-badge">Current Stock: <span id="stock-count">Checking...</span></div>
             
             <h2 style="margin-bottom: 30px;">Daily Calibration</h2>
 
@@ -250,7 +199,7 @@
         <div id="mirror-content" style="display: none;">
             <div style="font-size: 12px; text-transform: uppercase; color: #666; margin-bottom: 10px;">Today's Wisdom</div>
             <div class="quote-box" id="oracle-quote">
-                "The arrow that hits the bullseye is the result of a hundred misses. Consistency is the only secret."
+                "The arrow that hits the bullseye is the result of a hundred misses."
             </div>
             
             <div style="margin-top: 40px;">
@@ -274,75 +223,25 @@
         <div style="margin-top: 20px; padding: 20px; background: #111; border-radius: 15px; border: 1px solid #333;">
             <h3 style="font-size: 16px; margin-bottom: 10px;">Alchemist's Insight</h3>
             <p id="insight-text" style="color: #aaa; font-size: 14px; line-height: 1.5;">
-                Data insufficient. Continue the ritual for 3 more days to unlock bio-correlation analysis.
+                Loading biological data...
             </p>
         </div>
     </div>
 
     <script>
-        // --- APP STATE (Simulating Python Backend) ---
-        let state = {
-            inventory: 28,
-            streak: 12,
-            history: [],
-            lastRitual: null
-        };
-
-        // --- NAVIGATION LOGIC ---
+        // --- NAVIGATION ---
         function switchView(viewName) {
-            // Update Tab UI
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
             event.target.classList.add('active');
-
-            // Show Content
             document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
             document.getElementById(`view-${viewName}`).classList.add('active');
+            
+            // If clicking TRUTH, refresh data
+            if(viewName === 'truth') loadTruthData();
         }
 
         function updateVal(type, val) {
             document.getElementById(`val-${type}`).innerText = val;
-        }
-
-        // --- CORE LOGIC 1: IGNITION ---
-        function igniteRitual() {
-            const intention = document.getElementById('input-intention').value;
-            const energy = document.getElementById('input-energy').value;
-            const focus = document.getElementById('input-focus').value;
-
-            if (!intention) {
-                shakeButton();
-                document.getElementById('feedback-msg').innerText = ⚠️ The ritual requires intention.";
-                return;
-            }
-
-            // 1. Decrement Inventory
-            state.inventory--;
-            document.getElementById('stock-count').innerText = state.inventory;
-
-            // 2. Save Data (Simulating Python DB Save)
-            const log = {
-                date: new Date().toLocaleDateString('en-US', { weekday: 'short' }),
-                energy: parseInt(energy),
-                focus: parseInt(focus),
-                intention: intention
-            };
-            state.history.push(log);
-            state.lastRitual = log;
-
-            // 3. UI Feedback
-            const btn = document.querySelector('.ignite-btn');
-            btn.innerText = "RITUAL COMPLETE";
-            btn.style.background = "#28a745"; // Green success
-            document.getElementById('feedback-msg').innerText = "Wait for the revelation...";
-
-            // 4. Update Mirror & Truth
-            updateMirror(log);
-            updateChart();
-
-            // 5. Auto-switch to Mirror after delay
-            setTimeout(() => {
-                document.querySelectorAll('.nav-item')[1].click(); // Click "Mirror" tab
-            }, 1500);
         }
 
         function shakeButton() {
@@ -352,7 +251,72 @@
             setTimeout(() => btn.style.transform = "translateX(0)", 100);
         }
 
-        // --- CORE LOGIC 2: THE ORACLE (Mirror) ---
+        // --- CORE LOGIC 1: IGNITION (POST DATA) ---
+        function igniteRitual() {
+            const intention = document.getElementById('input-intention').value;
+            const energy = document.getElementById('input-energy').value;
+            const focus = document.getElementById('input-focus').value;
+
+            // Validation
+            if (!intention) {
+                shakeButton();
+                document.getElementById('feedback-msg').innerText = "⚠️ The ritual requires intention.";
+                return;
+            }
+
+            // Prepare Payload
+            const logData = {
+                energy: parseInt(energy),
+                focus: parseInt(focus),
+                intention: intention
+            };
+
+            // Loading State
+            const btn = document.querySelector('.ignite-btn');
+            const originalText = btn.innerText;
+            btn.innerText = "SYNCHRONIZING...";
+
+            // SEND TO PYTHON API
+            fetch('/api/ignite', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(logData)
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Server Error");
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === "success") {
+                    // 1. Success UI
+                    btn.innerText = "RITUAL COMPLETE";
+                    btn.style.background = "var(--success)";
+                    document.getElementById('feedback-msg').innerText = "Inventory Updated.";
+                    
+                    // 2. Update Stock Display
+                    document.getElementById('stock-count').innerText = data.new_stock;
+
+                    // 3. Update Mirror View
+                    updateMirror(logData);
+
+                    // 4. Auto-switch tabs
+                    setTimeout(() => {
+                        document.querySelectorAll('.nav-item')[1].click(); // Go to Mirror
+                    }, 1500);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                btn.innerText = "CONNECTION FAILED";
+                btn.style.background = "var(--error)";
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = ""; // Reset
+                }, 2000);
+            });
+        }
+
+        // --- CORE LOGIC 2: MIRROR (Local Logic) ---
         function updateMirror(log) {
             const quotes = {
                 low: "Rest is not idleness. It is the gathering of force.",
@@ -371,31 +335,25 @@
             document.getElementById('mirror-content').style.display = 'block';
         }
 
-        // --- CORE LOGIC 3: TRUTH (Chart.js) ---
-        let bioChart; // Global chart instance
+        // --- CORE LOGIC 3: TRUTH (GET DATA & CHART) ---
+        let bioChart; 
 
         function initChart() {
             const ctx = document.getElementById('bioChart').getContext('2d');
-            
-            // Initial Mock Data
-            const initialLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
-            const initialEnergy = [4, 5, 6, 5, 4];
-            const initialFocus = [3, 4, 7, 6, 5];
-
             bioChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: initialLabels,
+                    labels: [],
                     datasets: [{
                         label: 'Energy',
-                        data: initialEnergy,
+                        data: [],
                         borderColor: '#DAA520',
                         backgroundColor: 'rgba(218, 165, 32, 0.1)',
                         tension: 0.4,
                         fill: true
                     }, {
                         label: 'Focus',
-                        data: initialFocus,
+                        data: [],
                         borderColor: '#00BFFF',
                         borderDash: [5, 5],
                         tension: 0.4
@@ -403,9 +361,7 @@
                 },
                 options: {
                     responsive: true,
-                    plugins: {
-                        legend: { labels: { color: '#888' } }
-                    },
+                    plugins: { legend: { labels: { color: '#888' } } },
                     scales: {
                         y: { beginAtZero: true, max: 10, grid: { color: '#333' } },
                         x: { grid: { color: 'transparent' } }
@@ -414,34 +370,46 @@
             });
         }
 
-        function updateChart() {
-            if (!bioChart) return;
-            
-            // Add new data point from the ritual
-            const log = state.lastRitual;
-            
-            // Add data to chart
-            bioChart.data.labels.push(log.date);
-            bioChart.data.datasets[0].data.push(log.energy);
-            bioChart.data.datasets[1].data.push(log.focus);
-            
-            // Update visuals
-            bioChart.update();
+        function loadTruthData() {
+            fetch('/api/truth')
+            .then(response => response.json())
+            .then(data => {
+                const history = data.history;
+                
+                // Extract Arrays
+                const labels = history.map(h => h.date.slice(5)); // Show MM-DD
+                const energy = history.map(h => h.energy);
+                const focus = history.map(h => h.focus);
 
-            // Generate Insight
-            const improvement = log.focus - bioChart.data.datasets[1].data[0];
-            const insightText = document.getElementById('insight-text');
-            
-            if (improvement > 0) {
-                insightText.innerText = `🔥 Insight: Since starting the ritual, your Focus metrics have improved by ${(improvement/10)*100}%. The stack is working.`;
-                insightText.style.color = "#28a745";
-            } else {
-                insightText.innerText = `⚖️ Insight: You are stabilizing. Continue the ritual to see the breakthrough.`;
-            }
+                // Update Chart
+                if (bioChart) {
+                    bioChart.data.labels = labels;
+                    bioChart.data.datasets[0].data = energy;
+                    bioChart.data.datasets[1].data = focus;
+                    bioChart.update();
+                }
+
+                // Generate Insight
+                const text = document.getElementById('insight-text');
+                if (history.length > 2) {
+                    const avgFocus = focus.reduce((a, b) => a + b, 0) / focus.length;
+                    text.innerText = `🔥 Insight: Your average focus over the last ${history.length} rituals is ${avgFocus.toFixed(1)}/10.`;
+                    text.style.color = "var(--text-main)";
+                } else {
+                    text.innerText = "Data insufficient. Continue the ritual to unlock analysis.";
+                }
+            })
+            .catch(err => console.error("Failed to load truth data:", err));
         }
 
-        // Initialize Chart on Load
-        window.onload = initChart;
+        // Initial Load
+        window.onload = function() {
+            initChart();
+            loadTruthData(); // Try to get initial data
+            
+            // Also fetch stock level on load (Optional, but good UX)
+            // You could create a separate endpoint for just stock if you wanted.
+        };
 
     </script>
 </body>
